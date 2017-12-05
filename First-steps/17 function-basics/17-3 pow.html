@@ -18,7 +18,12 @@
     var x = parseInt(prompt("Введите X"));
     var n = parseInt(prompt("Введите N"));
 
-    alert( pow(x, n) );
+    if (n >= 1) {
+        alert( pow(x, n) );
+    }
+    else {
+        alert( 'Степень не поддерживается' );
+    }
 
 </script>
 </body>
