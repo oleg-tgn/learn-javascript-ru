@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+    'use strict';
+    /*
+        Неявное объявление глобальных переменных
+        Работает для старой версии, без использования use strict
+    */
+
+    function showMessage() {
+        message = 'Привет';
+    }
+
+    showMessage();
+
+    alert( message );
+
+</script>
+</body>
+</html>

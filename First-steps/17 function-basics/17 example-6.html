@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+    'use strict';
+    /*
+        Аргументы по умолчанию
+    */
+
+    function showMessage(from, text) {
+        if (text === undefined) {
+            text = 'текст не передан'
+        }
+
+        alert( from + ': ' + text );
+    }
+
+    function showMessage2(from, text) {
+        text = text || 'текст не передан';
+
+        alert( from + ': ' + text );
+    }
+
+    showMessage("Маша", "Привет!");
+    showMessage("Маша");
+    showMessage2("Маша");
+
+</script>
+</body>
+</html>
