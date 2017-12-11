@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script>
+    'use strict';
+
+    function getDecimal(x) {
+        var c = ~~x;
+        return x - c;
+    }
+
+    alert( getDecimal(12.345) ); // 0.345
+    alert( getDecimal(1.2) ); // 0.2
+    alert( getDecimal(-1.2) ); // 0.2
+</script>
+</body>
+</html>

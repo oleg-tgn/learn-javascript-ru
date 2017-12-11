@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script>
+    'use strict';
+
+    alert( Math.floor(3.1) );
+    alert( Math.ceil(3.1) );
+    alert( Math.round(3.1) );
+
+    alert( ~~12.3 ); // не округляет а только оберезает дессятичную часть и приводит к 32битному целому
+
+    alert( 12.3 ^ 0);
+    alert( 1.2 + 1.3 ^ 0); // 2 приоритет ^ меньше, чем +
+
+    var x = a * b / c ^ 0; // читается a * b / с и откруглить
+</script>
+</body>
+</html>

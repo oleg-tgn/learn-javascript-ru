@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script>
+    'use strict';
+
+    alert( 0 / 0 );
+
+    if (NaN == NaN) alert( "==" );
+    if (NaN === NaN) alert( "===" );
+
+    var n = 0 / 0;
+
+    alert( isNaN(n) );
+    alert( isNaN("12") );
+
+    alert( NaN + 1);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script>
+    'use strict';
+    //Правильный способ: Math.round(случайное от min-0.5 до max+0.5)
+
+    function randomInteger(min, max) {
+        var rand = min - 0.5 + Math.random() * (max - min + 1);
+        rand = Math.round(rand);
+        return rand;
+    }
+
+    alert( randomInteger(5, 10) );
+</script>
+</body>
+</html>
