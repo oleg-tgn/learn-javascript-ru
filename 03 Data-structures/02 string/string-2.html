@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
 
+
     <!-- подключаем стили Mocha, для отображения результатов -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
     <!-- подключаем библиотеку Mocha -->
@@ -24,19 +25,28 @@
 <body>
 <script>
     'use strict';
-    function sum() {
-        var a = +0.1;
-        var b = +0.2;
 
-        var c = (a * 10 + b * 10) / 10;
-        return c;
+    var text = "buy ViAgRA now";
+
+    function checkSpam(text) {
+        var spamWords = ['viagra', 'xxx'];
+
+        text = text.toLowerCase();
+
+        for (var i = 0; i < spamWords.length; i++) {
+            if (~text.indexOf(spamWords[i])) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    alert(c);
+    alert(checkSpam(text));
 </script>
 
+
 <!-- в этом скрипте находятся спеки -->
-<script src="number-2-test.js"></script>
+<script src="string-2-test.js"></script>
 
 <!-- в элементе с id="mocha" будут результаты тестов -->
 <div id="mocha"></div>
@@ -45,6 +55,5 @@
 <script>
     mocha.run();
 </script>
-
 </body>
 </html>

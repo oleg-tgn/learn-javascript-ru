@@ -24,19 +24,33 @@
 <body>
 <script>
     'use strict';
-    function sum() {
-        var a = +0.1;
-        var b = +0.2;
 
-        var c = (a * 10 + b * 10) / 10;
-        return c;
+    var str = "Ослик Иа-Иа посмотрел на виадук";
+    var target = "Иа";
+
+    function foundAllPositions(str, target) {
+        var pos = 0;
+        var positions = [];
+        while (true) {
+            var foundPos = str.indexOf(target, pos);
+
+            positions.push(foundPos);
+
+            if (foundPos == -1) break;
+            pos = foundPos + 1;
+        }
+        return positions;
     }
 
-    alert(c);
+    var result = foundAllPositions(str, target);
+    for (var i = 0; i < result.length; i++) {
+        alert( result[i] );
+    }
 </script>
 
+
 <!-- в этом скрипте находятся спеки -->
-<script src="number-2-test.js"></script>
+<script src="string-example-7-test.js"></script>
 
 <!-- в элементе с id="mocha" будут результаты тестов -->
 <div id="mocha"></div>
@@ -45,6 +59,5 @@
 <script>
     mocha.run();
 </script>
-
 </body>
 </html>
