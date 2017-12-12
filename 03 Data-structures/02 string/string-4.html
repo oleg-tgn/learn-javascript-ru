@@ -26,32 +26,23 @@
 <script>
     'use strict';
 
-    var text = "Вот, что мне хотелось бы сказать на эту тему:";
+    var text = "$120";
 
-    function truncate(str, maxlength) {
-        if (str === undefined) {
-            return "";
-        }
-        maxlength = parseInt(maxlength);
-        if (isNaN(maxlength) || maxlength <= 0) {
-            return str;
-        }
-        maxlength -= 3; // для многоточия
-        var strLength = str.length;
-        if (strLength <= maxlength) {
-            return str;
+    function extractCurrencyValue(str) {
+        if (str === undefined || str.length === 1) {
+            return NaN;
         }
 
-        str = str.slice(0, maxlength) + '...';
-        return str;
+        var value = parseFloat(str.slice(1));
+        return value;
     }
 
-    alert(truncate(text));
+    alert(extractCurrencyValue(text));
 </script>
 
 
 <!-- в этом скрипте находятся спеки -->
-<script src="string-3-test.js"></script>
+<script src="string-4-test.js"></script>
 
 <!-- в элементе с id="mocha" будут результаты тестов -->
 <div id="mocha"></div>

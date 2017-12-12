@@ -1,27 +1,27 @@
 'use strict';
 
-describe("Усекаем строку до N сиволов", function() {
-    it("Усекаем строку 'Вот, что мне хотелось бы сказать на эту тему:' до 20 символов и добавляем ...", function() {
-        assert.equal(truncate('Вот, что мне хотелось бы сказать на эту тему:', 20), 'Вот, что мне хоте...');
+describe("Извлекаем из строки число, если первый сивол, это символ валюты", function() {
+    it("Извлекаем из строки '$120' значение 120", function() {
+        assert.equal(extractCurrencyValue('$120'), 120);
     });
 
-    it("Усекаем строку 'Всем привет!' до 20 символов, строка не изменится", function() {
-        assert.equal(truncate('Всем привет!', 20), 'Всем привет!');
+    it("Тут уже числа не будет '$$120' получаем NaN", function() {
+        assert.isTrue(isNaN(extractCurrencyValue('$$120')));
     });
 
-    it("Усекаем строку 'Всем привет!' на отрицательное количество символов, строка не изменится", function() {
-        assert.equal(truncate("Всем привет!", -20), "Всем привет!");
+    it("Тут уже числа не будет '$' получаем NaN", function() {
+        assert.isTrue(isNaN(extractCurrencyValue('$')));
     });
 
-    it("Вместо числа передадим тоже строку, изначальная строка не изменится", function() {
-        assert.equal(truncate("Всем привет!", "Привет"), "Всем привет!");
+    it("Извлекаем из строки '$1.2' значение 1.2", function() {
+        assert.equal(extractCurrencyValue('$1.2'), 1.2);
     });
 
-    it("Забудем передать число, изначальная строка не изменится", function() {
-        assert.equal(truncate("Всем привет!"), "Всем привет!");
+    it("Извлекаем из строки '$1.2blabla' значение 1.2", function() {
+        assert.equal(extractCurrencyValue('$1.2blabla'), 1.2);
     });
 
-    it("Ничего не передадим, вернется пустая строка", function() {
-        assert.equal(truncate(), "");
+    it("Передадим пустую строку '' значение NaN", function() {
+        assert.isTrue(isNaN(extractCurrencyValue('')));
     });
 });
