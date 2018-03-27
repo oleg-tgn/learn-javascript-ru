@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script>
+    'use strict';
+
+    var codes = {
+        "+7": "Россия",
+        "+38": "Украина",
+        "+1": "США"
+    };
+
+    var user = {
+        name: "Вася",
+        surname: "Петров"
+    };
+    user.age = 25;
+
+    for (var prop in user) {
+        alert( prop );
+    }
+
+    for (var code in codes) {
+        alert( code );
+    }
+
+    for (var codeNew in codes) {
+        var value = codes[codeNew];
+        codeNew = +codeNew;
+
+        alert( codeNew + ": " + value );
+    }
+
+</script>
+
+</body>
+</html>

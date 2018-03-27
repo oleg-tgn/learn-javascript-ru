@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script>
+    'use strict';
+
+    var salaries = {
+        "Вася": 100,
+        "Петя": 300,
+        "Даша": 250
+    };
+
+    function gerSum(salaries) {
+        var sum = 0;
+
+        for (var name in salaries) {
+            sum += salaries[name];
+        }
+
+        return sum;
+    }
+
+
+    alert(gerSum(salaries));
+</script>
+
+</body>
+</html>
